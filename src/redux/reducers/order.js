@@ -1,8 +1,8 @@
 import { orderAction } from "../actions/order";
 
-initState = {listOrder:[], numberOrder:0};
+const initState = {listOrder:[], numberOrder:0};
 
-export const oderReducer = (state=initState, action) => {
+export const orderReducer = (state=initState, action) => {
     switch(action.type) {
         case orderAction.updateOrder:{
             action.data.forEach(order => {
@@ -12,8 +12,8 @@ export const oderReducer = (state=initState, action) => {
                 }else{
                     state.listOrder.push(order);
                 }
-                return {...state};
             })
+            return {...state};
         }
         case orderAction.updateNumberOrder:{
             state.numberOrder = action.data;
