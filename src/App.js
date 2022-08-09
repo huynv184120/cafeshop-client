@@ -3,9 +3,11 @@ import React from 'react';
 import { getListProDuct } from './services/product';
 import { useDispatch } from 'react-redux';
 import { updateProduct } from './redux/actions/product';
-import ListProductCard from './components/ListProductCard';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './containers/Homepage';
+import Header from './components/Header';
+import Auth from './containers/Auth';
+
 const App = () => {
   const dispatch = useDispatch();
   getListProDuct().then(data => {
@@ -14,7 +16,8 @@ const App = () => {
   return (
     <div className="App">
       <Routes>
-        <Route path='/home' element={<HomePage/>}/>
+        <Route path='/' element={<HomePage/>}/>
+        <Route path='/auth' element={<Auth/>}/>
       </Routes>      
     </div>
   );

@@ -1,0 +1,43 @@
+.header {
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.navbar {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-top: solid 1px rgb(63, 48, 48);
+    border-bottom: solid 1px rgb(63, 48, 48);
+}
+
+.navlink {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    color: rgb(104, 103, 100);
+}
+
+.selected_navlink {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    color: rgb(53, 141, 93);
+}
+
+.navlink:hover {
+    color: rgb(53, 141, 93);
+}
+
+.topbar {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar_logo img {
+    width: 60px;
+    border-radius: 50%;
+}
