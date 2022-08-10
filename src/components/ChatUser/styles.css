@@ -1,0 +1,8 @@
+.iconChat img {
+    width: 60px;
+}
+.iconChat {
+    position: fixed;
+    right: 20px;
+    bottom: 30%;
+}
