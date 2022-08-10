@@ -5,8 +5,8 @@ import { useDispatch } from 'react-redux';
 import { updateProduct } from './redux/actions/product';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './containers/Homepage';
-import Header from './components/Header';
-import Auth from './containers/Auth';
+import Signin from './containers/Signin';
+import Signup from './containers/Signup';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,8 @@ const App = () => {
     <div className="App">
       <Routes>
         <Route path='/' element={<HomePage/>}/>
-        <Route path='/auth' element={<Auth/>}/>
+        <Route path='/signin' element={<Signin/>}/>
+        <Route path='/signup' element={<Signup/>}/>
       </Routes>      
     </div>
   );

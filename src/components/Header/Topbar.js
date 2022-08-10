@@ -8,15 +8,15 @@ const Topbar = () => {
     return (
         <div className="topbar">
             <div className="topbar_logo">
-                <img src={logo}/>
+                <img src={logo} />
             </div>
             <div className="topbar_right">
                 {!isSignin ?
                     <div>
-                        <NavLink className="navlink" to="/auth">
+                        <NavLink className="navlink" to="/signin">
                             Đăng Nhập
                         </NavLink>
-                    </div> : 
+                    </div> :
                     <div>
                     </div>
                 }
