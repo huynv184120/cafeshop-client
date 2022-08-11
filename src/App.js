@@ -9,13 +9,22 @@ import Signin from "./containers/Signin";
 import Signup from "./containers/Signup";
 import Header from "./components/Header";
 import ChatUser from "./components/ChatUser";
-
+import { getUser } from "./services/user";
+import Cookies from "js-cookie";
+import {updateUserInfo} from "./redux/actions/user";
 const App = () => {
   const dispatch = useDispatch();
   getListProDuct().then((data) => {
     dispatch(updateProduct(data));
   });
-  const user = useSelector((state) => state.user.userInfo);
+  const token = Cookies.get("token");
+  const userId = Cookies.get("user_id");
+  const user = useSelector(state => state.user.userInfo);
+  if(token){
+    getUser(userId).then((data) =>{
+      dispatch(updateUserInfo(data));
+    })
+  }
 
   return (
     <div className="App">

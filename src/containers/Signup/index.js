@@ -17,11 +17,10 @@ const Signup = () => {
         });
     const signupHandle = async () => {
         const res = await signup(signupForm);
-        console.log(res);
     }
     return (
         <Card className='card'>
-            <Form autoComplete={false}>
+            <Form >
                 <Form.Group as={Row} className="mb-3">
                     <Form.Label column sm={4}>Email address</Form.Label>
                     <Col sm={8}>
@@ -32,7 +31,7 @@ const Signup = () => {
                 <Form.Group as={Row} className="mb-3" >
                     <Form.Label column sm={4}>Password</Form.Label>
                     <Col sm={8}>
-                        <Form.Control type="password" autoComplete={false} placeholder="mật khẩu"
+                        <Form.Control type="password" placeholder="mật khẩu"
                             onChange={(e) => { setSignupForm({ ...signupForm, password: e.target.value }) }} />
                     </Col>
                 </Form.Group>

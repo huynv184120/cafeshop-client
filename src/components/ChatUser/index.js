@@ -1,16 +1,12 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import ChatIcon from "./ChatIcon";
+import FrameChat from "./FrameChat";
 import './styles.css';
 const ChatUser = () => {
-  const hidden = useSelector((state) => state.chatUser.hidden);
   return (
     <div>
-      {hidden ? (
-       <ChatIcon/>
-      ) : (
-        <div></div>
-      )}
+      <ChatIcon/>
+      <FrameChat/>
     </div>
   );
 };

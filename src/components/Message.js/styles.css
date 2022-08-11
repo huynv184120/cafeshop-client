@@ -1,0 +1,42 @@
+.self_message {
+    display: "flex";
+    margin: "4px";
+    margin-right: "10px";
+    justify-content: "flex-end";
+    align-items : "center";
+}
+
+.message {
+    display: "flex";
+    margin: "4px";
+    margin-left: "10px";
+    flex-direction: "row";
+    align-items: "center";
+}
+
+.content_message {
+    height: "auto";
+    margin-left: "10px";
+    background: "rgb(23, 67, 189, 0.9)";
+    border-radius: "10px";
+    padding: "5px";
+    word-wrap: "break-word";
+    text-align: "left";
+    color: "white";
+    font-size: "18px";
+    margin-bottom: "10px";
+    position: "relative";
+}
+.self_content_message {
+    height: "auto";
+    margin-left: "10px";
+    background: "rgb(190, 191, 184, 0.6)";
+    border-radius: "10px";
+    padding: "5px";
+    word-wrap: "break-word";
+    text-align: "left";
+    color: "white";
+    font-size: "18px";
+    margin-bottom: "10px";
+    position: "relative";
+}

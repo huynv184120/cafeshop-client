@@ -6,3 +6,21 @@
     right: 20px;
     bottom: 30%;
 }
+.frame_chat {
+    position: fixed;
+    right: 100px;
+    bottom: 20px;
+    width: 250px;
+    border: solid 0.2px;
+    height: 300px;
+    border-top-left-radius: 20px;
+    background-color: aliceblue;
+}
+
+.content_frame_chat {
+    height: 220px;
+}
+.header-frame_chat {
+    background-color: rgb(61, 150, 130);
+    border-top-left-radius: 20px;
+}

@@ -37,3 +37,7 @@
     width: 60px;
     border-radius: 50%;
 }
+
+.topbar_right img {
+    width: 40px;
+}
