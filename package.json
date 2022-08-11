@@ -12,7 +12,10 @@
     "query-string": "^7.1.1",
     "react": "^17.0.2",
     "react-bootstrap": "^2.5.0",
+<<<<<<< HEAD
     "react-chat-elements": "^12.0.0",
+=======
+>>>>>>> 1c78ab5125c38d3aebfdbcad51bf8461408396b6
     "react-dom": "^17.0.2",
     "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0",
