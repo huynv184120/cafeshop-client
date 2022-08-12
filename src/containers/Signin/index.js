@@ -10,11 +10,8 @@ import Cookies from 'js-cookie';
 import {signin} from '../../services/auth';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-import { signin as actionSignin } from '../../redux/actions/user';
-import { useDispatch } from 'react-redux';
 
 const Signin = () => {
-    const dispatch = useDispatch();
     const [signinForm, setSigninForm] = useState({
         email: '',
         password: '',
@@ -54,4 +51,4 @@ const Signin = () => {
     </Card>
 }
 
-export default Signin;
+export default React.memo(Signin);

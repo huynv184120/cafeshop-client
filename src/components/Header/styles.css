@@ -27,7 +27,7 @@
 }
 
 .topbar {
-    height: 60px;
+    height: 65px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,7 +37,21 @@
     width: 60px;
     border-radius: 50%;
 }
+.topbar_right_list_icon {
+    display: flex;
+    align-items: center;
+}
 
-.topbar_right img {
+.topbar_right_list_icon img {
     width: 40px;
+}
+
+.topbar_right_list_icon img:hover{
+    width: 45px;
+}
+
+.topbar_right_list_icon div {
+    display: inline-block;
+    margin-left: 20px;
+    width: 50px;
 }

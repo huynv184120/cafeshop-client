@@ -11,7 +11,9 @@ import Header from "./components/Header";
 import ChatUser from "./components/ChatUser";
 import { getUser } from "./services/user";
 import Cookies from "js-cookie";
-import {updateUserInfo} from "./redux/actions/user";
+import { updateUserInfo } from "./redux/actions/user";
+import ManagePage from "./containers/ManagePage";
+
 const App = () => {
   const dispatch = useDispatch();
   getListProDuct().then((data) => {
@@ -20,8 +22,8 @@ const App = () => {
   const token = Cookies.get("token");
   const userId = Cookies.get("user_id");
   const user = useSelector(state => state.user.userInfo);
-  if(token){
-    getUser(userId).then((data) =>{
+  if (token && !user.email) {
+    getUser(userId).then((data) => {
       dispatch(updateUserInfo(data));
     })
   }
@@ -35,8 +37,9 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/signin" element={<Signin />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/manage" element={<ManagePage/>}/>
           </Routes>
-          <ChatUser/>
+          <ChatUser />
         </div>
       )}
     </div>

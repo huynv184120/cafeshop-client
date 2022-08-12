@@ -12,13 +12,13 @@
     bottom: 20px;
     width: 250px;
     border: solid 0.2px;
-    height: 300px;
+    height: 380px;
     border-top-left-radius: 20px;
     background-color: aliceblue;
 }
 
 .content_frame_chat {
-    height: 220px;
+    height: 300px;
 }
 .header-frame_chat {
     background-color: rgb(61, 150, 130);

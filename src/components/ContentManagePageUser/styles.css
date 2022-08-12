@@ -1,0 +1,13 @@
+#custom_card {
+    padding-top: 50px;
+    height: 380px;
+    border-top: none ;
+    top: 50px;
+    margin-top: 0;
+}
+
+#custom_card svg {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
