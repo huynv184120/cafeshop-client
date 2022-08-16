@@ -22,7 +22,7 @@ import {
 import "react-pro-sidebar/dist/css/styles.css";
 import "./styles.css";
 import { useDispatch, useSelector } from "react-redux";
-import { activeTab } from "../../redux/actions/managePage";
+import { activeTab } from "../../../redux/actions/managePage";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 

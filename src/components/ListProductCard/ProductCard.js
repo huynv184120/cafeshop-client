@@ -15,7 +15,7 @@ const ProductCard = ({ id, name, price, discount, status, description, imgUrl })
     const dispatch = useDispatch();
     const addProduct = () => {
         if(user.email){
-            dispatch(addProductToCart({id, name, imgUrl}));
+            dispatch(addProductToCart({id, name,price, discount}));
         }else{
             navigate('/signin');
         }
@@ -32,4 +32,4 @@ const ProductCard = ({ id, name, price, discount, status, description, imgUrl })
     </Card>
 }
 
-export default ProductCard;
+export default React.memo(ProductCard);

@@ -13,6 +13,13 @@ import { getUser } from "./services/user";
 import Cookies from "js-cookie";
 import { updateUserInfo } from "./redux/actions/user";
 import ManagePage from "./containers/ManagePage";
+import ShopPage from "./containers/ShopPage";
+import io from "socket.io-client";
+import config from "./config";
+import socketEvent from "./socketEvent";
+
+const socket = io(config.SOCKET_SERVER);
+let connectSocket = false;
 
 const App = () => {
   const dispatch = useDispatch();
@@ -22,12 +29,15 @@ const App = () => {
   const token = Cookies.get("token");
   const userId = Cookies.get("user_id");
   const user = useSelector(state => state.user.userInfo);
-  if (token && !user.email) {
+  if (token && !user.email && !connectSocket) {
     getUser(userId).then((data) => {
       dispatch(updateUserInfo(data));
-    })
+    });
   }
-
+  if(token && !connectSocket){
+    connectSocket=true;
+    socket.emit(socketEvent.online, {token});
+  }
   return (
     <div className="App">
       {(user.role == "user" || !user.role) && (
@@ -38,6 +48,14 @@ const App = () => {
             <Route path="/signin" element={<Signin />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/manage" element={<ManagePage/>}/>
+          </Routes>
+          <ChatUser />
+        </div>
+      )}
+      {(user.role == "shop") && (
+        <div className="container-user">
+          <Routes>
+            <Route path="/" element={<ShopPage/>}/>
           </Routes>
           <ChatUser />
         </div>

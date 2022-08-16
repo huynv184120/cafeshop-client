@@ -11,3 +11,14 @@
     top: 20px;
     right: 20px;
 }
+
+.custom_table {
+    width: 600px;
+}
+
+.container_custom_table {
+    margin: auto;
+    display: inline-block;
+    position: relative;
+    top:100px
+}

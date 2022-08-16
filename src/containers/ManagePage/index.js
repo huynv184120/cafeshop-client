@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import SideBarUser from '../../components/SidebarUser'; 
-import ContentManagePageUser from '../../components/ContentManagePageUser';
+import SideBarUser from './SidebarUser'; 
+import ContentManagePageUser from './ContentManagePageUser';
 
 const ManagePage = () => {
     const user = useSelector(state => state.user.userInfo);
