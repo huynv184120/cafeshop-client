@@ -16,7 +16,7 @@ const Signin = () => {
         email: '',
         password: '',
     })
-    const navigate =useNavigate();
+    const navigate = useNavigate();
     const signinHandle = async () => {
         const res = await signin(signinForm);
         if(res.success == true){

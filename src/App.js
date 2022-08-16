@@ -53,11 +53,10 @@ const App = () => {
         </div>
       )}
       {(user.role == "shop") && (
-        <div className="container-user">
+        <div>
           <Routes>
             <Route path="/" element={<ShopPage/>}/>
           </Routes>
-          <ChatUser />
         </div>
       )}
     </div>
