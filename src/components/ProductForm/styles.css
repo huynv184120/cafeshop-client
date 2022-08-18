@@ -2,3 +2,12 @@
     position: absolute;
     right: 100px;
 }
+
+.card {
+    margin: auto;
+    width: 405px;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+.custom_modal {}
