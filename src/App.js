@@ -17,6 +17,7 @@ import ShopPage from "./containers/ShopPage";
 import io from "socket.io-client";
 import config from "./config";
 import socketEvent from "./socketEvent";
+import { Notifications } from 'react-push-notification';
 
 const socket = io(config.SOCKET_SERVER);
 let connectSocket = false;
@@ -40,6 +41,7 @@ const App = () => {
   }
   return (
     <div className="App">
+      <Notifications/>
       {(user.role == "user" || !user.role) && (
         <div className="container-user">
           <Header />

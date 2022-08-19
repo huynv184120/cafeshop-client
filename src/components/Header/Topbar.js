@@ -25,7 +25,6 @@ const Topbar = () => {
                         </NavLink>
                     </div> :
                     <div className="topbar_right_list_icon">
-                        <div><img src={notifyIcon} alt="notify" /></div>
                         <NavLink className="navlink" to="/manage" onClick={() => { dispatch(activeTab(2)) }}>
                             <div><img src={cartIcon} alt="cart" /></div>
                         </NavLink>

@@ -1,7 +1,20 @@
 
 .list_product_card {
     margin-top: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-} 
+    margin: auto;
+    padding-top: 30px;
+    align-items: flex-start;
+}
+
+.product_card {
+    display: inline-block;
+    max-width: 240px;
+    margin: 50px;
+    padding: 20px;
+    border: solid 0.1px;
+    border-radius: 5px;
+}
+
+.product_card img {
+    width: 200px;
+}

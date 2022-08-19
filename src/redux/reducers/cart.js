@@ -43,7 +43,7 @@ export const cartReducer = (state = initSate, action) => {
       return { ...state };
     }
     case cartAction.resetCart:
-      return { ...initSate };
+      return { listProduct: [], numberProduct: 0  };
     case cartAction.deleteProductFromCart: {
       const index = state.listProduct.findIndex(
         (item) => item.id === action.data.id

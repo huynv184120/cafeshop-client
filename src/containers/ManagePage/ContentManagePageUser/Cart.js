@@ -2,12 +2,15 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 import { useState } from "react";
-import {order as makeOrder} from "../../../services/order";
+import { order as makeOrder } from "../../../services/order";
 import {
   removeProductFromCart,
   addProductToCart,
+  resetCart,
 } from "../../../redux/actions/cart";
 import Button from "react-bootstrap/Button";
+import { pushNotification } from "../../../utils/notify";
+
 const Cart = () => {
   const dispatch = useDispatch();
   const listProduct = useSelector((state) => state.cart.listProduct);
@@ -20,8 +23,13 @@ const Cart = () => {
       amount: item.amount,
     }));
     order.address = address;
-    if(address.length)
-    makeOrder(order);
+    makeOrder(order).then((data) => {
+      dispatch(resetCart());
+      if (data.appStatus == -1) {
+        pushNotification("that bai", "hien khong co nhan vien nao o cua hang");
+      } else
+        pushNotification("thanh cong", "xin vui long cho nhan vien cua hang kiem tra");
+    });
   };
   return (
     <div className="container_custom_table">
@@ -80,9 +88,9 @@ const Cart = () => {
             </td>
           </tr>
           <tr>
-          <td colspan="5">
-                {!address.length?<label>vui lòng điền địa chỉ nhận hàng</label>:<></>}
-          </td>
+            <td colspan="5">
+              {!address.length ? <label>vui lòng điền địa chỉ nhận hàng</label> : <></>}
+            </td>
           </tr>
           {listProduct.length ? (
             <tr>

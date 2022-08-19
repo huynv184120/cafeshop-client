@@ -1,7 +1,7 @@
 #custom_card {
     padding-top: 50px;
     height: 380px;
-    border-top: none ;
+    min-width: 400px;
     top: 50px;
     margin-top: 0;
 }

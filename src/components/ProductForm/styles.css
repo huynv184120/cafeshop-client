@@ -1,13 +1,12 @@
 .new_product {
     position: absolute;
-    right: 100px;
+    right: 47%;
+    top:20px
 }
 
-.card {
+#card {
     margin: auto;
-    width: 405px;
+    min-width: 450px;
     padding: 30px;
-    margin-top: 50px;
 }
 
-.custom_modal {}

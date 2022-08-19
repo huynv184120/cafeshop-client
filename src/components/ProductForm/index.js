@@ -6,9 +6,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Card } from "react-bootstrap";
 import "./styles.css";
-import {newProduct} from "../../services/product";
+import { newProduct } from "../../services/product";
 
-const FormProduct = ({ isNewForm, productInfo = {} }) => {
+const FormProduct = ({ isNewForm, productInfo = { name: "", price: 0, discount: 0, status: 0, description: "" } }) => {
   const [show, setShow] = useState(false);
   const [product, setProduct] = useState(productInfo);
   const handleClose = () => setShow(false);
@@ -18,11 +18,11 @@ const FormProduct = ({ isNewForm, productInfo = {} }) => {
     let formData = new FormData();
     formData.append("name", product.name);
     formData.append("price", product.price);
-    formData.append("discount",product.discount);
+    formData.append("discount", product.discount);
     formData.append("description", product.description);
     formData.append("status", product.status);
     formData.append("image", product.image);
-    if(isNewForm){
+    if (isNewForm) {
       newProduct(formData);
     }
   };
@@ -49,7 +49,7 @@ const FormProduct = ({ isNewForm, productInfo = {} }) => {
           </Modal.Header>
         )}
         <Modal.Body className="custom_modal">
-          <Card className="card">
+          <Card id="card">
             <Form>
               <Form.Group as={Row} className="mb-3">
                 <Form.Label column sm={4}>
@@ -117,11 +117,11 @@ const FormProduct = ({ isNewForm, productInfo = {} }) => {
                   <Form.Control
                     type="file"
                     onChange={(e) =>
-                    setProduct({ ...product, image: e.target.files[0] })
+                      setProduct({ ...product, image: e.target.files[0] })
                     }
                   />
                 </Col>
-                </Form.Group>
+              </Form.Group>
 
               <Form.Group as={Row} className="mb-3">
                 <Form.Label column sm={4}>
